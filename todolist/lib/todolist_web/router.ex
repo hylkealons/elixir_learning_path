@@ -9,6 +9,14 @@ defmodule TodolistWeb.Router do
     pipe_through :api
 
     get "/status", StatusController, :show
+
+    scope "/todo" do
+      get "/", TodoController, :index
+      get "/:id", TodoController, :show
+      post "/", TodoController, :create
+      put "/:id", TodoController, :update
+      delete "/:id", TodoController, :delete
+    end
   end
 
   # Enables LiveDashboard only for development
