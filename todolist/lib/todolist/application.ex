@@ -12,7 +12,8 @@ defmodule Todolist.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Todolist.PubSub},
       # Start the Endpoint (http/https)
-      TodolistWeb.Endpoint
+      TodolistWeb.Endpoint,
+      Todolist.Repo
       # Start a worker by calling: Todolist.Worker.start_link(arg)
       # {Todolist.Worker, arg}
     ]

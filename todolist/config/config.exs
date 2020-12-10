@@ -15,6 +15,15 @@ config :todolist, TodolistWeb.Endpoint,
   pubsub_server: Todolist.PubSub,
   live_view: [signing_salt: "2TTNMDqu"]
 
+config :todolist, ecto_repos: [Todolist.Repo]
+
+config :todolist, Todolist.Repo,
+  database: "db",
+  username: "root",
+  password: "root",
+  hostname: "localhost",
+  port: "5432"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
